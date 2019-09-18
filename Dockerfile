@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 
-LABEL company="Java Home Cloud" \
-      maintainer="Hari" \
-      Location="Banglore" \
+LABEL company="QT" \
+      maintainer="Bhuvana" \
+      Location="Hyderabad" \
       Version="0.0.1"
 
 RUN apt-get update -y
