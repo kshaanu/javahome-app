@@ -9,7 +9,7 @@ node('docker-test'){
     
     stage('Build Docker Image'){
         sh "sudo apt-get clean"
-        sh "docker build -t sample:1.1 ."
+        sh "docker build -t bhuvanakadiveti/sample:1.1 ."
     }
     
     stage('Push image to registry'){
