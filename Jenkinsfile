@@ -13,7 +13,7 @@ node('docker-test'){
     }
     
     stage('Push image to registry'){
-		withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'bhuvanakadiveti', passwordVariable: "Bhuvana@321#)]) {
+		withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'bhuvanakadiveti', passwordVariable: "Bhuvana@321#")]) {
       sh "docker login "
 		}
 	    
