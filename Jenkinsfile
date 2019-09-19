@@ -1,4 +1,4 @@
-node('docker'){
+node('docker-test'){
     def dockerImage = "bhuvanakadiveti/sample:1.0"
     deleteDir()
     stage('Checkout'){
