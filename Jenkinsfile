@@ -14,7 +14,7 @@ node('docker-test'){
     
     stage('Push image to registry'){
 		withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhubPwd')]) {
-      sh "docker login -u bhuvanakadiveti -p ${dockerhubPwd}"
+      //sh "docker login -u bhuvanakadiveti -p ${dockerhubPwd}"
 		}
         
         sh "docker push ${dockerImage}"
