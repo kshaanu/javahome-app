@@ -1,5 +1,5 @@
 node('docker-test'){
-    //def dockerImage = "bhuvanakadiveti/sample:1.0"
+    def dockerImage = "bhuvanakadiveti/sample:1.2"
     deleteDir()
     stage('Checkout'){
         
@@ -9,14 +9,14 @@ node('docker-test'){
     
     stage('Build Docker Image'){
         sh "sudo apt-get clean"
-        sh "docker build -t bhuvanakadiveti/sample:1.1 ."
+	    sh "docker build -t ${dockerImage} ."
     }
     
     stage('Push image to registry'){
 		withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'dockerHubUser', passwordVariable: "dockerHubPassword")]) {
       sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
 		
-          sh 'docker push bhuvanakadiveti/sample:1.1'
+          sh "docker push ${dockerImage}"
 		}
     }
   
