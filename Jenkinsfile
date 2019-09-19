@@ -1,5 +1,5 @@
 node('docker'){
-    def dockerImage = "bhuvanakadiveti/nodeapp:1.0"
+    def dockerImage = "bhuvanakadiveti/sample:1.0"
     deleteDir()
     stage('Checkout'){
         
