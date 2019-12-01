@@ -1,4 +1,4 @@
-node('docker-test'){
+node('docker'){
     def dockerImage = "anushakakunulla/sample:1.2"
     deleteDir()
     stage('Checkout'){
