@@ -12,8 +12,8 @@ node('docker'){
 	    sh "docker build -t ${dockerImage} ."
     }
    
-    stage('Push image to registry'){dockerHubPassword
-		withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'dockerHubUser', passwordVariable: "")]) {
+    stage('Push image to registry'){
+		withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'dockerHubUser', passwordVariable: "dockerHubPassword")]) {
       sh 'echo $dockerHubUser'
       sh 'echo $dockerHubPassword'
 			
