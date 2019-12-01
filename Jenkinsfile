@@ -1,9 +1,9 @@
 node('docker-test'){
-    def dockerImage = "bhuvanakadiveti/sample:1.2"
+    def dockerImage = "anushakakunulla/sample:1.2"
     deleteDir()
     stage('Checkout'){
         
-        git 'https://github.com/Bhuvana0509/javahome-app'
+        git 'https://github.com/kshaanu/javahome-app'
     }
     
     
